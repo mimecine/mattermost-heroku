@@ -15,14 +15,14 @@ export ENABLE_INCOMING_WEBHOOKS=`echo ${ENABLE_INCOMING_WEBHOOKS:=true} | tr -d 
 export ENABLE_OUTGOING_WEBHOOKS=`echo ${ENABLE_OUTGOING_WEBHOOKS:=true} | tr -d \"`
 export ENABLE_COMMANDS=`echo ${ENABLE_COMMANDS:=true} | tr -d \"`
 export ENABLE_ONLY_ADMIN_INTEGRATIONS=`echo ${ENABLE_ONLY_ADMIN_INTEGRATIONS:=true} | tr -d \"`
-export ENABLE_POST_USERNAME_OVERRIDE=`echo ${ENABLE_POST_USERNAME_OVERRIDE:=false} | tr -d \"`
-export ENABLE_POST_ICON_OVERRIDE=`echo ${ENABLE_POST_ICON_OVERRIDE:=false} | tr -d \"`
-export ENABLE_TESTING=`echo ${ENABLE_TESTING:=false} | tr -d \"`
-export ENABLE_DEVELOPER=`echo ${ENABLE_DEVELOPER:=false} | tr -d \"`
-export ENABLE_SECURITY_FIX_ALERT=`echo ${ENABLE_SECURITY_FIX_ALERT:=true} | tr -d \"`
-export ENABLE_INSECURE_OUTGOING_CONNECTIONS=`echo ${ENABLE_INSECURE_OUTGOING_CONNECTIONS:=false} | tr -d \"`
-export ENABLE_2FA=`echo ${ENABLE_2FA:=false} | tr -d \"`
-export ENABLE_CUSTOM_EMOJI=`echo ${ENABLE_CUSTOM_EMOJI:=false} | tr -d \"`
+export ENABLE_POST_USERNAME_OVERRIDE=`echo ${ENABLE_POST_USERNAME_OVERRIDE:=true} | tr -d \"`
+export ENABLE_POST_ICON_OVERRIDE=`echo ${ENABLE_POST_ICON_OVERRIDE:=true} | tr -d \"`
+export ENABLE_TESTING=`echo ${ENABLE_TESTING:=true} | tr -d \"`
+export ENABLE_DEVELOPER=`echo ${ENABLE_DEVELOPER:=true} | tr -d \"`
+export ENABLE_SECURITY_FIX_ALERT=`echo ${ENABLE_SECURITY_FIX_ALERT:=false} | tr -d \"`
+export ENABLE_INSECURE_OUTGOING_CONNECTIONS=`echo ${ENABLE_INSECURE_OUTGOING_CONNECTIONS:=true} | tr -d \"`
+export ENABLE_2FA=`echo ${ENABLE_2FA:=true} | tr -d \"`
+export ENABLE_CUSTOM_EMOJI=`echo ${ENABLE_CUSTOM_EMOJI:=true} | tr -d \"`
 
 export SESSION_LENGTH_WEB_IN_DAYS=`echo ${SESSION_LENGTH_WEB_IN_DAYS:=30} | tr -d \"`
 export SESSION_LENGTH_MOBILE_IN_DAYS=`echo ${SESSION_LENGTH_MOBILE_IN_DAYS:=30} | tr -d \"`
@@ -34,13 +34,13 @@ export WEBSOCKET_PORT=`echo ${WEBSOCKET_PORT:=80} | tr -d \"`
 #################
 # Team Settings #
 #################
-export ENABLE_TEAM_CREATION=`echo ${ENABLE_TEAM_CREATION:=false} | tr -d \"`
-export ENABLE_USER_CREATION=`echo ${ENABLE_USER_CREATION:=false} | tr -d \"`
-export ENABLE_TEAM_LISTING=`echo ${ENABLE_TEAM_LISTING:=false} | tr -d \"`
-export ENABLE_OPEN_SERVER=`echo ${ENABLE_OPEN_SERVER:=false} | tr -d \"`
-export ENABLE_CUSTOM_BRAND=`echo ${ENABLE_CUSTOM_BRAND:=false} | tr -d \"`
-export MAX_USERS_PER_TEAM=`echo ${MAX_USERS_PER_TEAM:=50} | tr -d \"`
-export RESTRICT_TEAM_NAMES=`echo ${RESTRICT_TEAM_NAMES:=true} | tr -d \"`
+export ENABLE_TEAM_CREATION=`echo ${ENABLE_TEAM_CREATION:=true} | tr -d \"`
+export ENABLE_USER_CREATION=`echo ${ENABLE_USER_CREATION:=true} | tr -d \"`
+export ENABLE_TEAM_LISTING=`echo ${ENABLE_TEAM_LISTING:=true} | tr -d \"`
+export ENABLE_OPEN_SERVER=`echo ${ENABLE_OPEN_SERVER:=true} | tr -d \"`
+export ENABLE_CUSTOM_BRAND=`echo ${ENABLE_CUSTOM_BRAND:=true} | tr -d \"`
+export MAX_USERS_PER_TEAM=`echo ${MAX_USERS_PER_TEAM:=1000} | tr -d \"`
+export RESTRICT_TEAM_NAMES=`echo ${RESTRICT_TEAM_NAMES:=false} | tr -d \"`
 export USER_STATUS_AWAY_TIMEOUT=`echo ${USER_STATUS_AWAY_TIMEOUT:=300} | tr -d \"`
 export RESTRICT_DIRECT_MESSAGE=`echo ${RESTRICT_DIRECT_MESSAGE:="any"}`
 
@@ -51,13 +51,13 @@ export DRIVER_NAME=`echo ${DRIVER_NAME:="postgres"}`
 export SQL_SETTINGS__AT_REST_ENCRYPT_KEY=$(printf "${SQL_SETTINGS__AT_REST_ENCRYPT_KEY}%.0s" {1..32} | cut -c -32)
 export MAX_IDLE_CONNS=`echo ${MAX_IDLE_CONNS:=10} | tr -d \"`
 export MAX_OPEN_CONNS=`echo ${MAX_OPEN_CONNS:=10} | tr -d \"`
-export TRACE=`echo ${TRACE:=false} | tr -d \"`
+export TRACE=`echo ${TRACE:=true} | tr -d \"`
 
 ################
 # Log Settings #
 ################
 export ENABLE_CONSOLE=`echo ${ENABLE_CONSOLE:=true} | tr -d \"`
-export ENABLE_FILE=`echo ${ENABLE_FILE:=false} | tr -d \"`
+export ENABLE_FILE=`echo ${ENABLE_FILE:=true} | tr -d \"`
 export ENABLE_WEBHOOK_DEBUGGING=`echo ${ENABLE_WEBHOOK_DEBUGGING:=true} | tr -d \"`
 export ENABLE_DIAGNOSTICS=`echo ${ENABLE_DIAGNOSTICS:=true} | tr -d \"`
 
@@ -67,7 +67,7 @@ export ENABLE_DIAGNOSTICS=`echo ${ENABLE_DIAGNOSTICS:=true} | tr -d \"`
 export FILE_SETTINGS__PUBLIC_LINK_SALT=$(printf "${FILE_SETTINGS__PUBLIC_LINK_SALT}%.0s" {1..32} | cut -c -32)
 
 export MAX_FILE_SIZE=`echo ${MAX_FILE_SIZE:=52428800} | tr -d \"`
-export ENABLE_PUBLIC_LINK=`echo ${ENABLE_PUBLIC_LINK:=false} | tr -d \"`
+export ENABLE_PUBLIC_LINK=`echo ${ENABLE_PUBLIC_LINK:=true} | tr -d \"`
 export THUMBNAIL_WIDTH=`echo ${THUMBNAIL_WIDTH:=120} | tr -d \"`
 export THUMBNAIL_HEIGHT=`echo ${THUMBNAIL_HEIGHT:=100} | tr -d \"`
 export PREVIEW_WIDTH=`echo ${PREVIEW_WIDTH:=1024} | tr -d \"`
@@ -86,10 +86,10 @@ export EMAIL_SETTINGS__PASSWORD_RESET_SALT=$(printf "${EMAIL_SETTINGS__PASSWORD_
 export ENABLE_SIGNUP_WITH_EMAIL=`echo ${ENABLE_SIGNUP_WITH_EMAIL:=true} | tr -d \"`
 export ENABLE_SIGNIN_WITH_EMAIL=`echo ${ENABLE_SIGNIN_WITH_EMAIL:=true} | tr -d \"`
 export ENABLE_SIGNIN_WITH_USERNAME=`echo ${ENABLE_SIGNIN_WITH_USERNAME:=true} | tr -d \"`
-export SEND_EMAIL_NOTIFICATIONS=`echo ${SEND_EMAIL_NOTIFICATIONS:=false} | tr -d \"`
+export SEND_EMAIL_NOTIFICATIONS=`echo ${SEND_EMAIL_NOTIFICATIONS:=true} | tr -d \"`
 export REQUIRE_EMAIL_VERIFICATION=`echo ${REQUIRE_EMAIL_VERIFICATION:=false} | tr -d \"`
-export SEND_PUSH_NOTIFICATIONS=`echo ${SEND_PUSH_NOTIFICATIONS:=false} | tr -d \"`
-export ENABLE_EMAIL_BATCHING=`echo ${ENABLE_EMAIL_BATCHING:=false} | tr -d \"` 
+export SEND_PUSH_NOTIFICATIONS=`echo ${SEND_PUSH_NOTIFICATIONS:=true} | tr -d \"`
+export ENABLE_EMAIL_BATCHING=`echo ${ENABLE_EMAIL_BATCHING:=true} | tr -d \"` 
 export EMAIL_BATCHING_BUFFER_SIZE=`echo ${EMAIL_BATCHING_BUFFER_SIZE:=256} | tr -d \"` 
 export EMAIL_BATCHING_INTERVAL=`echo ${EMAIL_BATCHING_INTERVAL:=30} | tr -d \"` 
 
@@ -110,7 +110,7 @@ export SHOW_FULL_NAME=`echo ${SHOW_FULL_NAME:=true} | tr -d \"`
 #####################
 # Password Settings #
 #####################
-export PASSWORD_MININMUM_LENGTH=`echo ${PASSWORD_MININMUM_LENGTH:=8} | tr -d \"`
+export PASSWORD_MININMUM_LENGTH=`echo ${PASSWORD_MININMUM_LENGTH:=5} | tr -d \"`
 export PASSWORD_LOWERCASE=`echo ${PASSWORD_LOWERCASE:=false} | tr -d \"`
 export PASSWORD_NUMBER=`echo ${PASSWORD_NUMBER:=false} | tr -d \"`
 export PASSWORD_UPEPRCASE=`echo ${PASSWORD_UPEPRCASE:=false} | tr -d \"`
@@ -119,31 +119,31 @@ export PASSWORD_SYMBOL=`echo ${PASSWORD_SYMBOL:=false} | tr -d \"`
 ##########################
 # SSO/LDAP/SAML Settings #
 ##########################
-export ENABLE_GITLAB=`echo ${ENABLE_GITLAB:=false} | tr -d \"`
-export ENABLE_GOOGLE=`echo ${ENABLE_GOOGLE:=false} | tr -d \"`
-export ENABLE_OFFICE365=`echo ${ENABLE_OFFICE365:=false} | tr -d \"`
+export ENABLE_GITLAB=`echo ${ENABLE_GITLAB:=true} | tr -d \"`
+export ENABLE_GOOGLE=`echo ${ENABLE_GOOGLE:=true} | tr -d \"`
+export ENABLE_OFFICE365=`echo ${ENABLE_OFFICE365:=true} | tr -d \"`
 
-export ENABLE_LDAP=`echo ${ENABLE_LDAP:=false} | tr -d \"`
+export ENABLE_LDAP=`echo ${ENABLE_LDAP:=true} | tr -d \"`
 export LDAP_PORT=`echo ${LDAP_PORT:=389} | tr -d \"`
 export LDAP_SYNC_INTERVAL=`echo ${LDAP_SYNC_INTERVAL:=60} | tr -d \"`
-export LDAP_SKIP_CERT_VERIFICATION=`echo ${LDAP_SKIP_CERT_VERIFICATION:=false} | tr -d \"`
+export LDAP_SKIP_CERT_VERIFICATION=`echo ${LDAP_SKIP_CERT_VERIFICATION:=true} | tr -d \"`
 export LDAP_QUERY_TIMEOUT=`echo ${LDAP_QUERY_TIMEOUT:=60} | tr -d \"`
 export LDAP_MAX_PAGE_SIZE=`echo ${LDAP_MAX_PAGE_SIZE:=0} | tr -d \"`
 
-export ENABLE_SAML=`echo ${ENABLE_SAML:=false} | tr -d \"`
-export ENABLE_SAML_VERIFY=`echo ${ENABLE_SAML_VERIFY:=false} | tr -d \"`
-export ENABLE_SAML_ENCRYPT=`echo ${ENABLE_SAML_ENCRYPT:=false} | tr -d \"`
+export ENABLE_SAML=`echo ${ENABLE_SAML:=true} | tr -d \"`
+export ENABLE_SAML_VERIFY=`echo ${ENABLE_SAML_VERIFY:=true} | tr -d \"`
+export ENABLE_SAML_ENCRYPT=`echo ${ENABLE_SAML_ENCRYPT:=true} | tr -d \"`
 
 #######################
 # Compliance Settings #
 #######################
-export ENABLE_COMPLIANCE=`echo ${ENABLE_COMPLIANCE:=false} | tr -d \"`
-export ENABLE_DAILY_COMPLIANCE=`echo ${ENABLE_DAILY_COMPLIANCE:=false} | tr -d \"`
+export ENABLE_COMPLIANCE=`echo ${ENABLE_COMPLIANCE:=true} | tr -d \"`
+export ENABLE_DAILY_COMPLIANCE=`echo ${ENABLE_DAILY_COMPLIANCE:=true} | tr -d \"`
 
 ####################
 # Cluster Settings #
 ####################
-export ENABLE_CLUSTER=`echo ${ENABLE_CLUSTER:=false} | tr -d \"`
+export ENABLE_CLUSTER=`echo ${ENABLE_CLUSTER:=true} | tr -d \"`
 export CLUSTER_INTER_NODE_URLS=`echo ${CLUSTER_INTER_NODE_URLS:1:${#CLUSTER_INTER_NODE_URLS}-2}`
 
 ########################################################################
