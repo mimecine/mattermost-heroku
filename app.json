@@ -1,8 +1,8 @@
 {
-  "name": "Mattermost Heroku",
-  "description": "Deploy Mattermost to Heroku",
-  "repository": "https://github.com/mozilla/mattermost-heroku",
-  "keywords": ["mattermost", "nginx"],
+  "name": "PGNests",
+  "description": "Deploy PGNests",
+  "repository": "https://github.com/columbusnests/mattermost-heroku",
+  "keywords": ["PGNests", "nginx"],
   "success_url": "/",
   "buildpacks": [
     {
@@ -26,7 +26,7 @@
         "description": "The port you want Nginx and Mattermost to talk to each other on - Don't change this unless you change the Nginx buildpack too.",
         "required": true
     },
-    "TEAM_SETTINGS__SITE_NAME": "Mattermost",
+    "TEAM_SETTINGS__SITE_NAME": "PGNests",
     "SQL_SETTINGS__AT_REST_ENCRYPT_KEY": {
             "description": "SqlSettings AtRestEncryptKey",
             "generator": "secret"
