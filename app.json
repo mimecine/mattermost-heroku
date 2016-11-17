@@ -1,8 +1,8 @@
 {
-  "name": "PGNests",
-  "description": "Deploy PGNests",
+  "name": "DoTransform",
+  "description": "Deploy DoTransform",
   "repository": "https://github.com/columbusnests/mattermost-heroku",
-  "keywords": ["PGNests", "nginx"],
+  "keywords": ["DoTransform", "nginx"],
   "success_url": "/",
   "buildpacks": [
     {
