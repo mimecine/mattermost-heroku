@@ -17,8 +17,8 @@ export ENABLE_COMMANDS=`echo ${ENABLE_COMMANDS:=true} | tr -d \"`
 export ENABLE_ONLY_ADMIN_INTEGRATIONS=`echo ${ENABLE_ONLY_ADMIN_INTEGRATIONS:=true} | tr -d \"`
 export ENABLE_POST_USERNAME_OVERRIDE=`echo ${ENABLE_POST_USERNAME_OVERRIDE:=true} | tr -d \"`
 export ENABLE_POST_ICON_OVERRIDE=`echo ${ENABLE_POST_ICON_OVERRIDE:=true} | tr -d \"`
-export ENABLE_TESTING=`echo ${ENABLE_TESTING:=true} | tr -d \"`
-export ENABLE_DEVELOPER=`echo ${ENABLE_DEVELOPER:=true} | tr -d \"`
+export ENABLE_TESTING=`echo ${ENABLE_TESTING:=false} | tr -d \"`
+export ENABLE_DEVELOPER=`echo ${ENABLE_DEVELOPER:=false} | tr -d \"`
 export ENABLE_SECURITY_FIX_ALERT=`echo ${ENABLE_SECURITY_FIX_ALERT:=false} | tr -d \"`
 export ENABLE_INSECURE_OUTGOING_CONNECTIONS=`echo ${ENABLE_INSECURE_OUTGOING_CONNECTIONS:=true} | tr -d \"`
 export ENABLE_2FA=`echo ${ENABLE_2FA:=true} | tr -d \"`
@@ -119,31 +119,31 @@ export PASSWORD_SYMBOL=`echo ${PASSWORD_SYMBOL:=false} | tr -d \"`
 ##########################
 # SSO/LDAP/SAML Settings #
 ##########################
-export ENABLE_GITLAB=`echo ${ENABLE_GITLAB:=true} | tr -d \"`
+export ENABLE_GITLAB=`echo ${ENABLE_GITLAB:=false} | tr -d \"`
 export ENABLE_GOOGLE=`echo ${ENABLE_GOOGLE:=true} | tr -d \"`
-export ENABLE_OFFICE365=`echo ${ENABLE_OFFICE365:=true} | tr -d \"`
+export ENABLE_OFFICE365=`echo ${ENABLE_OFFICE365:=false} | tr -d \"`
 
-export ENABLE_LDAP=`echo ${ENABLE_LDAP:=true} | tr -d \"`
+export ENABLE_LDAP=`echo ${ENABLE_LDAP:=false} | tr -d \"`
 export LDAP_PORT=`echo ${LDAP_PORT:=389} | tr -d \"`
 export LDAP_SYNC_INTERVAL=`echo ${LDAP_SYNC_INTERVAL:=60} | tr -d \"`
 export LDAP_SKIP_CERT_VERIFICATION=`echo ${LDAP_SKIP_CERT_VERIFICATION:=true} | tr -d \"`
 export LDAP_QUERY_TIMEOUT=`echo ${LDAP_QUERY_TIMEOUT:=60} | tr -d \"`
 export LDAP_MAX_PAGE_SIZE=`echo ${LDAP_MAX_PAGE_SIZE:=0} | tr -d \"`
 
-export ENABLE_SAML=`echo ${ENABLE_SAML:=true} | tr -d \"`
+export ENABLE_SAML=`echo ${ENABLE_SAML:=false} | tr -d \"`
 export ENABLE_SAML_VERIFY=`echo ${ENABLE_SAML_VERIFY:=true} | tr -d \"`
 export ENABLE_SAML_ENCRYPT=`echo ${ENABLE_SAML_ENCRYPT:=true} | tr -d \"`
 
 #######################
 # Compliance Settings #
 #######################
-export ENABLE_COMPLIANCE=`echo ${ENABLE_COMPLIANCE:=true} | tr -d \"`
+export ENABLE_COMPLIANCE=`echo ${ENABLE_COMPLIANCE:=false} | tr -d \"`
 export ENABLE_DAILY_COMPLIANCE=`echo ${ENABLE_DAILY_COMPLIANCE:=true} | tr -d \"`
 
 ####################
 # Cluster Settings #
 ####################
-export ENABLE_CLUSTER=`echo ${ENABLE_CLUSTER:=true} | tr -d \"`
+export ENABLE_CLUSTER=`echo ${ENABLE_CLUSTER:=false} | tr -d \"`
 export CLUSTER_INTER_NODE_URLS=`echo ${CLUSTER_INTER_NODE_URLS:1:${#CLUSTER_INTER_NODE_URLS}-2}`
 
 ########################################################################
